@@ -2,45 +2,61 @@
 
 ## Overview
 
-A Data Engineering mini-project that fetches GitHub user information using the GitHub API, stores the data in PostgreSQL, and displays the results through a Streamlit dashboard.
-
-## Features
-
-* Fetch GitHub user information using GitHub REST API
-* Display profile image and user details
-* Store user information in PostgreSQL
-* Retrieve stored data from PostgreSQL
-* Interactive Streamlit dashboard
+A Streamlit-based dashboard that fetches GitHub user information using the GitHub API, processes the data, and stores it in PostgreSQL.
 
 ## Tech Stack
 
 * Python
 * Streamlit
-* PostgreSQL
 * Pandas
 * Requests
-* GitHub API
+* PostgreSQL
+* Git & GitHub
 
-## Project Flow
+## Architecture
 
+```text
 GitHub API
-→ Fetch User Data
-→ JSON Response
-→ Data Transformation
-→ PostgreSQL Storage
-→ Streamlit Dashboard
+     ↓
+requests.get()
+     ↓
+JSON Response
+     ↓
+Pandas
+     ↓
+PostgreSQL
+     ↓
+Streamlit Dashboard
+```
 
-## How to Run
+## Features
 
-1. Install required packages
+* Fetch GitHub user details
+* Display profile image
+* Show followers, following, and repositories
+* Process API JSON data
+* Store user data in PostgreSQL
+* Interactive Streamlit dashboard
 
+## Project Structure
+
+```text
+github-user-dashboard/
+│
+├── app.py
+├── api.py
+├── database.py
+├── requirements.txt
+└── README.md
+```
+
+## Run Project
+
+```bash
 pip install -r requirements.txt
-
-2. Run the application
-
 streamlit run app.py
+```
 
 ## Author
 
 Abhiram
-B.Tech CSE (Data Science)
